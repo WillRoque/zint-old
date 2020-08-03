@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/1cbedfe93c71726d770fb0a52831834c17534215256b07390786fa417e41b802",
+  "displayName": "FuzzQR",
+  "path": "FuzzQR.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

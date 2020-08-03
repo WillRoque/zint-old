@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/b3f1b83b9982791181d33a0eb6b9401cebf3ed88b3662794a9a3fa0ea69b30e3",
+  "displayName": "FuzzVIN",
+  "path": "FuzzVIN.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

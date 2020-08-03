@@ -1,0 +1,22 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb",
+  "displayName": "zint",
+  "buildScriptContent": "#!/bin/bash -eu\nmkdir -p build\ncd build\ncmake ..\nmake -j$(nproc)",
+  "location": {
+    "localPath": "/home/willian/Projects/WillRoque/zint"
+  },
+  "projectEnvironment": {
+    "dockerBuild": {
+      "name": "macourteau/docker-jenkins-buildessential:latest",
+      "auth": {
+
+      }
+    },
+    "dockerRun": {
+      "name": "macourteau/docker-jenkins-buildessential:latest",
+      "auth": {
+
+      }
+    }
+  }
+}

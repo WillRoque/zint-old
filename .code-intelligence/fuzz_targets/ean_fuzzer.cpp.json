@@ -1,0 +1,15 @@
+{
+  "name": "ean_fuzzer-a5e6e59e",
+  "displayName": "ean_fuzzer",
+  "path": "ean_fuzzer.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

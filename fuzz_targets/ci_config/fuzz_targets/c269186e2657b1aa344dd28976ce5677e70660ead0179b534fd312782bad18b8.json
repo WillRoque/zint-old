@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/c269186e2657b1aa344dd28976ce5677e70660ead0179b534fd312782bad18b8",
+  "displayName": "FuzzEAN",
+  "path": "FuzzEAN.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint-static",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/141af950f98beda53652c41a31f306d9869cdc015e2985b0846236f3f702aaa1",
+  "displayName": "FuzzCODEONE",
+  "path": "FuzzCODEONE.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

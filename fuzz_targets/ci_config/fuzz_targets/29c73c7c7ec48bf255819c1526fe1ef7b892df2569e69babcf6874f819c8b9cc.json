@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/29c73c7c7ec48bf255819c1526fe1ef7b892df2569e69babcf6874f819c8b9cc",
+  "displayName": "FuzzDOTCODE",
+  "path": "FuzzDOTCODE.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}

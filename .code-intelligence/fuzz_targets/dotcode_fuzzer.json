@@ -1,0 +1,14 @@
+{
+  "name": "all_barcodes_fuzzer-a5e6e59e",
+  "displayName": "all_barcodes_fuzzer",
+  "path": "all_barcodes_fuzzer.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ]
+}

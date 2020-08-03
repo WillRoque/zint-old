@@ -1,0 +1,15 @@
+{
+  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb/fuzz_targets/5468285ed5b6a715c0efcacc36bca783bf29e9c4b23c7e70dd168d24ea99c7be",
+  "displayName": "FuzzAUSROUTE",
+  "path": "FuzzAUSROUTE.cpp",
+  "buildFlags": [
+    "-Ibuild/backend",
+    "-Ibackend",
+    "-lpng",
+    "-lz",
+    "-lm",
+    "-lzint",
+    "-Lbuild/backend"
+  ],
+  "skipInitialCorpus": true
+}
