@@ -1,19 +1,22 @@
 {
-  "name": "projects/project-4905718a-4da1-11ea-bbe0-8c1645a161cb",
+  "name": "projects/zint-006bf471",
   "displayName": "zint",
-  "buildScriptContent": "#!/bin/bash -eu\nmkdir -p build\ncd build\ncmake ..\nmake -j$(nproc)",
+  "buildScriptContent": "mkdir build\ncd build\ncmake .. # Here, you can place your CMake options such as -DDISABLE_TESTS\nmake -j$(nproc)",
+  "details": {
+    "buildSystem": "CMAKE"
+  },
   "location": {
     "localPath": "/home/willian/Projects/WillRoque/zint"
   },
   "projectEnvironment": {
     "dockerBuild": {
-      "name": "macourteau/docker-jenkins-buildessential:latest",
+      "name": "cifuzz/builders:zint",
       "auth": {
 
       }
     },
     "dockerRun": {
-      "name": "macourteau/docker-jenkins-buildessential:latest",
+      "name": "cifuzz/builders:zint",
       "auth": {
 
       }

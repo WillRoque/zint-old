@@ -1,9 +1,9 @@
 {
-  "name": "FuzzCODE128-acdf8e35",
-  "displayName": "FuzzEAN",
+  "name": "ean_fuzzer-f5b69279",
+  "displayName": "ean_fuzzer",
   "maxRunTime": "1800s",
   "fuzzTargets": [
-    "ean_fuzzer-a5e6e59e"
+    "ean_fuzzer-64014948"
   ],
   "fuzzerRunConfigurations": [
     {
