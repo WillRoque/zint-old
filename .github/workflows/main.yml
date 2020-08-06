@@ -7,7 +7,7 @@ on:
     branches: [ master ]
     
 env:
-  PROJECT_NAME: zint-github  
+  PROJECT_NAME: zint-github 
   REPORT_EMAIL: roque@code-intelligence.com
   
 jobs:
