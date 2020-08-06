@@ -31,4 +31,5 @@ jobs:
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
+          findings_type: "UNKNOWN_ERROR,CRASH"
           
