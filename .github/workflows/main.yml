@@ -14,27 +14,28 @@ jobs:
   fuzz_ean_fuzzer:      
     runs-on: ubuntu-latest
     steps:
-#       - id: start-fuzzing
-#         name: Build And Start Fuzzing
-#         uses: CodeIntelligenceTesting/github-actions/start-fuzzing@master
-#         with:
-#           cognito_user: ${{ secrets.COGNITO_USER }}
-#           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
-#           project: ${{ env.PROJECT_NAME }}
-#           test_collection: "ean_fuzzer"          
-#           report_email: ${{ env.REPORT_EMAIL }}
-#       - id: monitor-fuzzing
-#         name: Monitor Fuzzing
-#         uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
-#         with:
-#           cognito_user: ${{ secrets.COGNITO_USER }}
-#           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
-#           project: ${{ env.PROJECT_NAME }}
-#           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
+      - id: start-fuzzing
+        name: Build And Start Fuzzing
+        uses: WillRoque/fuzzing-action/start-fuzzing@master
+        with:
+          cognito_user: ${{ secrets.COGNITO_USER }}
+          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          project: ${{ env.PROJECT_NAME }}
+          test_collection: "ean_fuzzer"          
+          report_email: ${{ env.REPORT_EMAIL }}
+      - id: monitor-fuzzing
+        name: Monitor Fuzzing
+        uses: WillRoque/fuzzing-action/monitor-fuzzing@master
+        with:
+          cognito_user: ${{ secrets.COGNITO_USER }}
+          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          project: ${{ env.PROJECT_NAME }}
+          test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
       - id: report-coverage
         name: Report Coverage
         uses: WillRoque/fuzzing-action/report-coverage@master
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          coverage_dir: ${{ steps.monitor-fuzzing.outputs.coverage_dir }}
 
           
