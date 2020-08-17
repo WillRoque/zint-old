@@ -30,6 +30,7 @@ jobs:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
+          test_collection: "ean_fuzzer"
           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
       - id: report-coverage
         name: Report Coverage
