@@ -11,7 +11,7 @@ env:
   REPORT_EMAIL: roque@code-intelligence.com
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
   REPO: ${{ github.event.repository.name }}
-  OWNER: ${{ github.event.repository.owner.id }}
+  OWNER: ${{ github.event.repository.owner.name }}
   PULL_REQUEST_NUMBER: ${{ github.event.number }}
   
 jobs:
