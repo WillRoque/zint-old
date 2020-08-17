@@ -34,7 +34,7 @@ jobs:
           test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
       - id: test
         name: test
-        run: ls $GITHUB_WORKSPACE && echo "..." && ls $GITHUB_WORKSPACE/cov
+        run: ls $GITHUB_WORKSPACE && echo "..." && ls $GITHUB_WORKSPACE/cov && echo "\n" && cat $GITHUB_EVENT_PATH
       - id: report-coverage
         name: Report Coverage
         uses: WillRoque/fuzzing-action/report-coverage@master
