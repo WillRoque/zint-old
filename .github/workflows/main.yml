@@ -5,18 +5,18 @@ on:
     branches: [ master ]
   pull_request:
     branches: [ master ]
-    
+
 env:
-  PROJECT_NAME: zint-github
+  PROJECT_NAME: zint  
   REPORT_EMAIL: roque@code-intelligence.com
-  
+
 jobs:
-  fuzz_ean_fuzzer:      
+  fuzz_ean_fuzzer:
     runs-on: ubuntu-latest
     steps:
       - id: start-fuzzing
         name: Build And Start Fuzzing
-        uses: WillRoque/fuzzing-action/start-fuzzing@master
+        uses: CodeIntelligenceTesting/github-actions/start-fuzzing@master
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
@@ -25,18 +25,28 @@ jobs:
           report_email: ${{ env.REPORT_EMAIL }}
       - id: monitor-fuzzing
         name: Monitor Fuzzing
-        uses: WillRoque/fuzzing-action/monitor-fuzzing@master
+        uses: CodeIntelligenceTesting/github-actions/monitor-fuzzing@master
+        with:
+          cognito_user: ${{ secrets.COGNITO_USER }}
+          cognito_password: ${{ secrets.COGNITO_PASSWORD }}
+          project: ${{ env.PROJECT_NAME }}
+          test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          pull_request_number: ${{ github.event.pull_request.number }}
+          owner: ${{ github.event.repository.owner.login }}
+          repository: ${{ github.event.repository.name }}
+          timeout: 30
+      - id: report-coverage
+        name: Report Coverage
+        uses: CodeIntelligenceTesting/github-actions/report-coverage@master
+        if: ${{ github.event_name == 'pull_request' && (success() || failure()) }}
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
           project: ${{ env.PROJECT_NAME }}
           test_collection: "ean_fuzzer"
-          test_collection_run: ${{ steps.start-fuzzing.outputs.test_collection_run }}
-      - id: report-coverage
-        name: Report Coverage
-        uses: WillRoque/fuzzing-action/report-coverage@master
-        with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          coverage_dir: ${{ steps.monitor-fuzzing.outputs.coverage_dir }}
-
-          
+          pull_request_number: ${{ github.event.pull_request.number }}
+          owner: ${{ github.event.repository.owner.login }}
+          repository: ${{ github.event.repository.name }}
+          commit: ${{ github.sha }}
