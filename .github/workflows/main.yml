@@ -7,7 +7,7 @@ on:
     branches: [ master ]
 
 env:
-  PROJECT_NAME: zint-github  
+  PROJECT_NAME: zint  
   REPORT_EMAIL: roque@code-intelligence.com
 
 jobs:
@@ -38,7 +38,7 @@ jobs:
       - id: report-coverage
         name: Report Coverage
         uses: CodeIntelligenceTesting/github-actions/report-coverage@master
-        if: ${{ success() || failure() }}
+        if: ${{ github.event_name == 'pull_request' && (success() || failure()) }}
         with:
           cognito_user: ${{ secrets.COGNITO_USER }}
           cognito_password: ${{ secrets.COGNITO_PASSWORD }}
